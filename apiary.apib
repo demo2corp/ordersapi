@@ -1,0 +1,86 @@
+FORMAT: 1A
+
+# Orders API
+
+# Hello 
+
+**Lorem ipsum** dolor sit amet, consectetur adipiscing elit. Praesent non lacinia tellus. Maecenas in risus non magna porta posuere vitae gravida nulla. Cras pretium iaculis efficitur. Maecenas odio lorem, pretium nec pellentesque quis, dignissim ac velit. Mauris hendrerit in nisl sit amet rhoncus. Donec id nibh at est ultrices pellentesque eu viverra nunc. Vestibulum ullamcorper nec metus elementum imperdiet. Vivamus congue lectus vitae luctus tristique. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi quis sem eget diam sagittis fringilla vitae sit amet purus. Cras sit amet nisl molestie ante iaculis dignissim at ac eros. Nullam ultrices tellus dignissim ligula sodales malesuada. 
+
+![airplane](http://www.stickees.com/files/transport/air-vehicles/5839-airplane-front-red-sticker.png)
+
+- one 
+- two
+- three
+    - a
+    - b
+    
+<table class="tg" style="undefined;table-layout: fixed; width: 120px">
+<colgroup>
+<col style="width: 74px">
+<col style="width: 23px">
+<col style="width: 23px">
+</colgroup>
+  <tr>
+    <th class="tg-yw4l">a</th>
+    <th class="tg-yw4l">1</th>
+    <th class="tg-yw4l">x</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">b</td>
+    <td class="tg-yw4l">1</td>
+    <td class="tg-yw4l">y</td>
+  </tr>
+</table>
+
+
+Vestibulum ultricies ex non vestibulum blandit. In at augue vel ex pulvinar eleifend.
+
+
+## List of Orders [/orders]
+
+This is our list of orders.
+
+### Retrieve [GET]
+
+This action retrieves all the orders in the system.
+
+- Response 200 (application/json)
+    - Attributes (My Orders)
+    
+### Create [POST]
+- Request (application/json)
+    - Attributes
+        - qty (number)
+        - items (array[My Item])
+        
+- Response 201
+
+
+## Order [/orders/{id}]
+
+This is a single order.
+
+### Retrieve single order [GET]
+- Response 200 (application/json)
+    - Attributes (My Order)
+
+
+
+# Data Structures
+
+## My Order
+- id: 123123 (number) - Id of an order
+- status (enum)
+    - ready
+    - waiting
+    - cancelled
+- qty: 2 (number)
+- price: 213123 (number) - the total price in **euros**
+- items (array[My Item])
+
+## My Item 
+- name: this is my item
+
+## My Orders
+- totalValue: 123123 (number)
+- orders (array[My Order])
